@@ -1,0 +1,283 @@
+1. What Is Object Oriented Programming? 
+Ans - object-oriented programming is about creating objects that contain both data and functions.
+
+2. What Are Properties Of Object Oriented Systems?
+Ans - The four principles of object-oriented programming are encapsulation, abstraction, inheritance, and polymorphism.
+
+3. What Is Difference Between Class And Interface? 
+Ans - The main difference between class and interface is that a class describes the behavior of an object. In contrast, an interface contains the behaviors assigned and defined by the class.
+
+4. What Is Overloading? 
+Ans - Overloading occurs when two or more methods in one class have the same method name but different parameters.
+
+5. What Is PAAMAYIM_NEKUDOTAYIM (Scope Resolution Operator (::) with Example.
+Ans - The Scope Resolution Operator also called PAAMAYIM_NEKUDOTAYIM or in simpler terms, the double colon, is a token that allows access to static,constant and overridden properties or methods of a class. when referencing these items from outside the class definition,use the name of the class.
+Ex : 
+<?php
+class myclass{
+const const_value = 'a constant value';
+}
+$classname='myclass';
+echo $classname::const_value;
+
+echo myclass::const_value;
+?>
+
+6. What are the differences between abstract classes and interfaces?
+Ans - Interfaces cannot have properties, while abstract classes can. All interface methods must be public, while abstract class methods is public or protected. All methods in an interface are abstract, so they cannot be implemented in code and the abstract keyword is not necessary.
+
+7. Define Constructor and Destructor?
+Ans - Constructor : A constructor allows you to initialize an object's properties upon creation of the object. If you create a __construct() function, PHP will automatically call this function when you create an object from a class.
+Destructor: A destructor is called when the object is destructed or the script is stopped or exited. If you create a __destruct() function, PHP will automatically call this function at the end of the script.
+
+8. How to Load Classes in PHP?
+Ans - Syntax:
+Function name(function ($class_name) {
+    include $class_name . '.php';
+  });
+Example:
+<?php
+    regi(function($className) {
+          $file = $className . '.php';
+          if (file_exists($file)) {
+             echo "$file included\n";
+             include $file;
+          } 
+          else {
+             throw new Exception("Unable to load $className.");
+          }
+    });
+    try {
+      $obj1 = new test1();
+      $obj2 = new test10();
+    } catch (Exception $e) {
+      echo $e->getMessage(), "\n";
+    }
+?>
+
+9. How to Call Parent Constructor?
+Ans - a call to parent::__construct() within the child constructor is required.
+
+10. Are Parent Constructor Called Implicitly When Create An Object Of Class?
+Ans - Parent constructors are not called implicitly if the child class defines a constructor. In order to run a parent constructor, a call to parent::__construct() within the child constructor is required. 
+
+11. What Happen, If Constructor Is Defined As Private Or Protected?
+Ans - The purpose of a private or protected constructor is to prevent the class from being instantiated from outside of the class. You could create a public static function in the class that returns a new object, but you cannot create it directly if you want to have the constructor be protected or private.
+
+12. What are PHP Magic Methods/Functions? List them.
+Ans - PHP magic methods are special methods that are called automatically when certain conditions are met.__construct(), __destruct(), __call(), __callStatic(), __get(), __set(), __isset(), __unset(), __sleep(), __wakeup(), __serialize(), __unserialize(), __toString(), __invoke(), __set_state(), __clone(), and __debugInfo().
+
+13. Write program for Static Keyword in PHP?
+Ans - <?php
+class MyClass {
+  public static $str = "Hello World!";
+  
+  public static function hello() {
+    echo MyClass::$str;
+  }
+}
+
+echo MyClass::$str;
+echo "<br>";
+echo MyClass::hello();
+?>
+
+14. Create multiple Traits and use it in to a single class? 
+Ans - <?php
+trait message1 {
+  public function msg1() {
+    echo "OOP is fun! "; 
+  }
+}
+
+trait message2 {
+  public function msg2() {
+    echo "OOP reduces code duplication!"; 
+  }
+}
+
+class Welcome {
+  use message1;
+  use message2;
+}
+
+$obj = new Welcome();
+$obj->msg1();
+$obj->msg2();
+?>
+
+15. Write PHP Script of Object Iteration?
+Ans - PHP provides a way for objects to be defined so it is possible to iterate through a list of items, with, for example a foreach statement. By default, all visible properties will be used for the iteration.
+<?php
+class MyClass
+{
+    public $var1 = 'value 1';
+    public $var2 = 'value 2';
+    public $var3 = 'value 3';
+
+    protected $protected = 'protected var';
+    private   $private   = 'private var';
+
+    function iterateVisible() {
+       echo "MyClass::iterateVisible:\n";
+       foreach ($this as $key => $value) {
+           print "$key => $value\n";
+       }
+    }
+}
+
+$class = new MyClass();
+
+foreach($class as $key => $value) {
+    print "$key => $value\n";
+}
+echo "\n";
+
+
+$class->iterateVisible();
+
+?>
+o/p=>
+var1 => value 1
+var2 => value 2
+var3 => value 3
+
+MyClass::iterateVisible:
+var1 => value 1
+var2 => value 2
+var3 => value 3
+protected => protected var
+private => private var
+
+16. Use of The $this keyword.
+Ans - $this is a reserved keyword in PHP that refers to the calling object. It is usually the object to which the method belongs, but possibly another object if the method is called statically from the context of a secondary object. This keyword is only applicable to internal methods.
+Example:
+
+<?php
+class simple{
+  
+    public $my = 12;
+  
+    public function display(){
+        return $this->my;
+    }
+}
+  
+$obj = new simple();
+echo $obj->display();
+  
+?>
+0/p->12
+
+
+Jquery:
+
+a) What is jQuery? 
+Ans - jQuery is a JavaScript library.
+jQuery greatly simplifies JavaScript programming.
+jQuery is easy to learn.
+
+b) How are JavaScript and jQuery different?
+Ans - JavaScript is an interpreted programming language, intended for making network-driven applications. The JavaScript language is cross-platform, open, and extremely simple to use due to its integration with HTML.
+-jQuery is a quick and compact JavaScript Library that makes HTML document traversing, event handling, animating, and Ajax associations for fast web improvement more comprehensible. It’s both feature-rich and cross-platform and is designed for a certain purpose, which is to take care of HTML client-side scripting. 
+
+c) Which is the starting point of code execution in jQuery?
+Ans - The jQuery starts its code execution from the $(document).ready() function which is executed whenever the whole HTML DOM is loaded and is totally rendered by the browser, so that the event handlers work correctly without any errors. This $(document).ready() function load the script only after the whole DOM is loaded by the browser.
+
+d) Document Load Vs Window. Load() jQuery .
+Ans - [i]document.ready is a jQuery event, it runs when the DOM is ready, e.g. all elements are there to be found/used, but not necessarily all content.
+$(document).ready(function() {
+    // executes when HTML-Document is loaded and DOM is ready
+    alert("document is ready");
+   });
+   
+[ii]window.onload fires later (or at the same time in the worst/failing cases) when images and such are loaded, so if you're using image dimensions for example, you often want to use this instead.
+$(window).load(function() {
+    // executes when complete page is fully loaded, including all frames, objects and images
+    alert("window is loaded");
+   });
+
+e) What is the difference between prop and attr?
+Ans - Both attr () and prop () are used to get or set the value of the specified property of an element attribute, but attr () returns the default value (Original state) of a property whereas prop () returns the current value (Current state).
+
+f) Explain Difference Between JQuery And JavaScript?
+Ans - [i]javascript:JavaScript is extremely valuable while using forms. It has the ability to validate user input for errors and furthermore saves time. For instance, if the data is wrong, JavaScript checks for them prior to sending the information over to the server. 
+=>JavaScript gives more noteworthy control to the program as opposed to being totally dependent on the web servers. 
+Unlike other programming languages, JavaScript comes loaded with built-in functions to determine the date and time. Hence, it is very easy to code only by using methods like .getDate().
+=>JavaScript is an interpreted language, which means the script written inside javascript is processed line by line. These Scripts are interpreted by a JavaScript interpreter, a built-in component of the Web browser. 
+=>JavaScript has extremely helpful features to progressively create HTML content for the web.
+=>It permits us to add text, joins, pictures, tables, and so forth after an event occurrence (eg – mouse click, etc).
+
+[ii]jQuery:jQuery has a predefined method using which you can perform any task easily compared to JavaScript. Also, it is easy to learn. 
+jQuery has a predetermined CSS() method for manipulating the style for any Html elements.
+=>The jQuery made it easy to select DOM elements, traverse them and modify their content. 
+=>jQuery supports all modern web browsers including IE-6. and event handling like clicking the mouse button. 
+=>jQuery supports ajax, you can develop a responsive and feature-rich site using AJAX technology. 
+=>jQuery comes with built-in Animation. It has a predefined method “animate()” for creating custom animation on the web page.
+=>jQuery promotes brevity and clarity with features like chainable functions and shorthand function names.
+
+g) How We Can Select The Specified <li> Element From The ListOf <li> Elements In <ul>?
+Ans - document.querySelectorAll("ul > li");
+$('ul li').each(function(i)
+{
+   $(this).attr('rel'); // This is your rel value
+});
+
+h) In <table> Design Change The Color Of Even <tr> Elements To “green”And Change The Color Of Odd <tr> Elements To “blue” Color? Give An Example Code?
+Ans - $(document).ready(function()
+{
+  //for table row
+  $("tr:even").css("background-color", "green");
+  $("tr:odd").css("background-color", "blue");
+
+});
+
+i) How We Can Implement Animation Effects In Jquery?
+Ans - $("button").click(function(){
+   $("div").animate({left: '500px'});
+ }); 
+
+j) Apply jQuery validation using library.
+Ans - $(function() {
+  // Initialize form validation on the registration form.
+  // It has the name attribute "registration"
+  $("form[name='registration']").validate({
+    // Specify validation rules
+    rules: {
+      // The key name on the left side is the name attribute
+      // of an input field. Validation rules are defined
+      // on the right side
+      firstname: "required",
+      lastname: "required",
+      email: {
+        required: true,
+        // Specify that email should be validated
+        // by the built-in "email" rule
+        email: true
+      },
+      password: {
+        required: true,
+        minlength: 5
+      }
+    },
+    // Specify validation error messages
+    messages: {
+      firstname: "Please enter your firstname",
+      lastname: "Please enter your lastname",
+      password: {
+        required: "Please provide a password",
+        minlength: "Your password must be at least 5 characters long"
+      },
+      email: "Please enter a valid email address"
+    },
+    // Make sure the form is submitted to the destination defined
+    // in the "action" attribute of the form when valid
+    submitHandler: function(form) {
+      form.submit();
+    }
+  });
+});
+
+
+
+

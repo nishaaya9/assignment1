@@ -1,0 +1,69 @@
+Q-1. What do you understand By Database?
+Ans- A database is an organized collection of data, so that it can be easily accessed and managed.
+You can organize data into tables, rows, columns, and index it to make it easier to find relevant information.
+
+Q-2. What is Normalization? 
+Ans- Normalization represents the way of organizing structured data in the database efficiently.it includes the creation of tables,
+establishing relationships between them and defining rules for those relationships.inconsistency and redundancy can be kept in 
+check based on these rules,hence,adding flexibility to the database.
+
+Q-3. What is Difference between DBMS and RDBMS? 
+Ans-                            
+						DBMS												RDBMS
+
+1. DBMS stands for Database Management System                  1. RDBMS is the acronym for the Relational Database Management system	
+2. Data stored is in the file format						2. Data stored is in table format
+3. Individual access of data elements			                          3. Multiple data elements are accessible together
+4. No connection between data                                                        4. Data in the form of a table are linked together
+5. There is normalisation                                                                   5. Normalisation is not achievable
+6. Data redundancy is common                                                       6. Here, redundancy of data is reduced with the help of key and indexes in RDBMS
+7. It supports single user.                                                                  7. It supports multiple users.
+8. Ex. Oracle, SQL Server.	                                                             8. Ex. XML.
+
+
+Q-4. What is MF Cod Rule of RDBMS Systems? 
+Ans- Codd's twelve rules are a set of thirteen rules (numbered zero to twelve) proposed by Edgar F. Codd, a pioneer of the relational model 
+for databases,designed to define what is required from a database management system in order for it to be considered relational, 
+i.e., a relational database management system (RDBMS).
+
+
+Q-5. What do you understand By Data Redundancy? 
+Ans- Data redundancy occurs when the same piece of data exists in multiple places.
+
+
+Q-6. What is DDL Interpreter? 
+Ans- It processes the DDL statements into a set of table containing meta data (data about data).
+
+
+Q-7. What is DML Compiler in SQL? 
+Ans- It processes the DML statements into low level instruction (machine language), so that they can be executed. 
+
+
+Q-8. What is SQL Key Constraints writing an Example of SQL Key Constraints 
+Ans- Constraints are the rules that we can apply on the type of data in a table. That is, we can specify the limit on the type 
+of data that can be stored in a particular column in a table using constraints. The available constraints in SQL are: NOT NULL:
+This constraint tells that we cannot store a null value in a column.
+
+
+Q-9. What is save Point? How to create a save Point write a Query? 
+Ans- Savepoint is a command in SQL that is used with the rollback command.
+It is a command in Transaction Control Language that is used to mark the transaction in a table.
+Consider you are making a very long table, and you want to roll back only to a certain position in a table then; 
+this can be achieved using the savepoint.
+-SAVEPOINT SP1;
+Savepoint created.
+-ROLLBACK TO SP1;
+Rollback completed.
+
+Q-10. What is trigger and how to create a Trigger in SQL?
+Ans- A trigger is a special type of stored procedure that automatically runs when an event occurs in the database server.
+-create [or replace] trigger trigger_name
+[before | After]
+[insert [or] | update [or] | delete] on table_name
+[referencing old as 0 new as n]
+[for each row]
+[declare <declare section> ]
+begin
+[exception]
+end;
+
